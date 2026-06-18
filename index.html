@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miracle Founders | Co-Working Space in Mumbra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --gold:#f3c62f;
+      --gold-dark:#c99a00;
+      --black:#0d0d0d;
+      --ink:#171717;
+      --muted:#6f6f6f;
+      --cream:#fff8e5;
+      --white:#ffffff;
+      --card:#161616;
+      --line:rgba(255,255,255,.14);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;background:#0b0b0b;color:var(--white);line-height:1.5}
+    a{text-decoration:none;color:inherit}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1160px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.5px}
+    .brand img{width:46px;height:46px;border-radius:50%;object-fit:cover;background:white}
+    .brand span{color:var(--gold)}
+    .links{display:flex;gap:26px;color:#e7e7e7;font-size:14px;font-weight:600}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;background:var(--gold);color:#111;font-weight:800;box-shadow:0 12px 32px rgba(243,198,47,.25);transition:.25s}
+    .btn:hover{transform:translateY(-2px);background:#ffd84c}
+    .btn.ghost{background:transparent;color:white;border:1px solid rgba(255,255,255,.25);box-shadow:none}
+    .hero{min-height:100vh;padding:130px 22px 70px;position:relative;overflow:hidden;background:
+      radial-gradient(circle at 78% 15%, rgba(243,198,47,.30), transparent 28%),
+      linear-gradient(135deg, rgba(0,0,0,.95), rgba(20,20,20,.88)),
+      url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070707 0%,rgba(7,7,7,.86) 45%,rgba(7,7,7,.25) 100%)}
+    .hero-inner{position:relative;max-width:1160px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:1.8px;font-size:12px;margin-bottom:18px}
+    h1{font-size:clamp(42px,7vw,82px);line-height:.96;letter-spacing:-3px;margin-bottom:22px}
+    h1 span{color:var(--gold)}
+    .hero p{font-size:18px;color:#e4e4e4;max-width:620px;margin-bottom:28px}
+    .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:620px}
+    .stat{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.06)}
+    .stat b{display:block;color:var(--gold);font-size:28px}.stat small{color:#cfcfcf;font-weight:600}
+    .hero-card{border:1px solid rgba(243,198,47,.35);background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border-radius:34px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.38)}
+    .hero-card img{width:88px;height:88px;border-radius:50%;background:white;object-fit:cover;margin-bottom:20px}
+    .price{font-size:48px;font-weight:900;color:var(--gold);letter-spacing:-2px}.price small{font-size:16px;color:#ddd;font-weight:600}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}.feature{padding:14px;border-radius:16px;background:rgba(0,0,0,.36);font-weight:700;color:#f7f7f7}
+    section{padding:86px 22px}.wrap{max-width:1160px;margin:auto}.section-title{font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-1.8px;margin-bottom:14px}.section-title span{color:var(--gold)}.sub{color:#bebebe;max-width:680px;margin-bottom:34px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#151515;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:28px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(243,198,47,.55)}.icon{font-size:30px;margin-bottom:18px}.card h3{font-size:20px;margin-bottom:10px}.card p{color:#bdbdbd}
+    .about{background:var(--cream);color:#111}.about .sub,.about p{color:#4f4f4f}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.about-box{background:white;border-radius:28px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.08)}.list{display:grid;gap:12px;margin-top:18px}.list div{padding:14px 16px;border-radius:14px;background:#fff6d4;font-weight:800;color:#111}
+    .plans{background:#0d0d0d}.plan{position:relative;overflow:hidden}.plan.popular{border-color:var(--gold);box-shadow:0 20px 60px rgba(243,198,47,.12)}.tag{display:inline-block;background:var(--gold);color:#111;font-weight:900;border-radius:999px;padding:6px 12px;font-size:12px;margin-bottom:16px}.amount{font-size:36px;font-weight:900;color:var(--gold);margin:12px 0}.plan ul{list-style:none;display:grid;gap:10px;color:#d7d7d7;margin:18px 0 24px}.plan li:before{content:"✓";color:var(--gold);font-weight:900;margin-right:10px}
+    .contact{background:linear-gradient(135deg,#151515,#050505)}.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:24px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:30px;padding:32px}.info{display:grid;gap:14px}.info div{padding:16px;border-radius:16px;background:rgba(255,255,255,.06)}form{display:grid;gap:12px}input,textarea{width:100%;padding:15px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:#0d0d0d;color:white;font-family:inherit}textarea{min-height:120px;resize:vertical}footer{padding:26px 22px;text-align:center;color:#aaa;border-top:1px solid var(--line)}
+    @media(max-width:850px){.links{display:none}.hero-inner,.about-grid,.contact-box{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.features{grid-template-columns:1fr}h1{letter-spacing:-1.5px}.hero{padding-top:110px}}
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner"><a class="brand" href="#"><img src="assets/logo.png" alt="Miracle Founders logo"><div>Miracle <span>Founders</span></div></a><div class="links"><a href="#spaces">Spaces</a><a href="#amenities">Amenities</a><a href="#plans">Plans</a><a href="#contact">Contact</a></div><a class="btn" href="#contact">Book Visit</a></div></nav>
+
+  <header class="hero"><div class="hero-inner"><div><div class="eyebrow">🎙 Founders community • Mumbra & Thane</div><h1>Premium <span>co-working</span> space for ambitious founders.</h1><p>Work smarter, network better and scale faster from a professional workspace built for freelancers, startups, creators and small teams in Mumbra.</p><div class="cta"><a class="btn" href="#contact">Get a Seat Today</a><a class="btn ghost" href="#amenities">Explore Amenities</a></div><div class="stats"><div class="stat"><b>24/7</b><small>Productive workspace</small></div><div class="stat"><b>Hi‑Speed</b><small>Wi‑Fi included</small></div><div class="stat"><b>1:1</b><small>Founder networking</small></div></div></div><div class="hero-card"><img src="assets/logo.png" alt="MF logo"><h2>MF Co‑Working Space</h2><p>Flexible desks, meeting zone, discussion events and business growth support under one roof.</p><div class="price">₹999 <small>/ starting plan</small></div><div class="features"><div class="feature">☕ Tea & Coffee</div><div class="feature">🖨 Printing</div><div class="feature">📶 Fast Wi‑Fi</div><div class="feature">🤝 Community</div></div></div></div></header>
+
+  <section id="spaces"><div class="wrap"><h2 class="section-title">A workspace that feels <span>premium</span> but stays affordable.</h2><p class="sub">Designed for people who need a serious place to work, meet clients and build strong business connections.</p><div class="grid"><div class="card"><div class="icon">💻</div><h3>Hot Desks</h3><p>Choose a flexible desk whenever you need a productive office environment.</p></div><div class="card"><div class="icon">🏢</div><h3>Dedicated Seats</h3><p>Reserve your daily spot with a professional setup for consistent work.</p></div><div class="card"><div class="icon">👥</div><h3>Meeting Area</h3><p>Host client calls, business meetings and founder discussions with confidence.</p></div></div></div></section>
+
+  <section class="about" id="amenities"><div class="wrap about-grid"><div><h2 class="section-title">Everything you need to <span>focus and grow.</span></h2><p>Miracle Founders combines co-working with a business growth community, helping members collaborate, share ideas and discover opportunities.</p></div><div class="about-box"><h3>Included Amenities</h3><div class="list"><div>High-speed Wi‑Fi</div><div>Comfortable seating</div><div>Tea & coffee access</div><div>Printing & scanning support</div><div>Open discussion & startup meetups</div><div>Located in Mumbra for easy access</div></div></div></div></section>
+
+  <section class="plans" id="plans"><div class="wrap"><h2 class="section-title">Simple rental <span>plans</span></h2><p class="sub">Demo pricing for the website. Replace with your actual rates before launch.</p><div class="grid"><div class="card plan"><h3>Day Pass</h3><div class="amount">₹199</div><ul><li>One day access</li><li>Wi‑Fi included</li><li>Tea/coffee access</li></ul><a class="btn ghost" href="#contact">Enquire</a></div><div class="card plan popular"><span class="tag">Most Popular</span><h3>Monthly Seat</h3><div class="amount">₹2,999</div><ul><li>Dedicated work access</li><li>Community events</li><li>Meeting zone access</li></ul><a class="btn" href="#contact">Book Now</a></div><div class="card plan"><h3>Team Plan</h3><div class="amount">Custom</div><ul><li>For small teams</li><li>Brand-friendly setup</li><li>Priority support</li></ul><a class="btn ghost" href="#contact">Talk to Us</a></div></div></div></section>
+
+  <section class="contact" id="contact"><div class="wrap contact-box"><div><h2 class="section-title">Book a visit to <span>Miracle Founders</span></h2><p class="sub">Send your details and the team can contact you for seat availability, pricing and location guidance.</p><div class="info"><div><b>📍 Location</b><br>Mumbra, Thane, Maharashtra</div><div><b>📞 Call / WhatsApp</b><br>+91 98765 43210</div><div><b>📷 Instagram</b><br>@miraclefounders</div></div></div><form><input type="text" placeholder="Your name"><input type="tel" placeholder="Mobile number"><input type="email" placeholder="Email address"><textarea placeholder="I want a day pass / monthly seat / meeting space..."></textarea><button class="btn" type="button">Submit Enquiry</button></form></div></section>
+
+  <footer>© 2026 Miracle Founders. Demo website concept built for co-working space promotion.</footer>
+</body>
+</html>
